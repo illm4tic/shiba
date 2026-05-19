@@ -13,10 +13,7 @@ import { createRiggedShiba } from "./shibaRig.js";
 const app = document.querySelector("#app");
 const actionButtons = Array.from(document.querySelectorAll("[data-action]"));
 const localeButtons = Array.from(document.querySelectorAll("[data-locale]"));
-const heroEyebrow = document.querySelector("#hero-eyebrow");
 const heroTitle = document.querySelector("#hero-title");
-const heroDescription = document.querySelector("#hero-description");
-const languageLabel = document.querySelector("#language-label");
 const statusLabel = document.querySelector("#status-label");
 const currentActionLabel = document.querySelector("#current-action");
 
@@ -151,14 +148,10 @@ function setActiveButton(name) {
 
 function applyLocale(locale) {
   const copy = getMessages(locale);
-
   currentLocale = locale;
   document.documentElement.lang = copy.htmlLang;
   document.title = copy.documentTitle;
-  heroEyebrow.textContent = copy.eyebrow;
   heroTitle.textContent = copy.title;
-  heroDescription.innerHTML = copy.description;
-  languageLabel.textContent = copy.languageLabel;
   statusLabel.textContent = copy.statusLabel;
 
   for (const button of actionButtons) {
