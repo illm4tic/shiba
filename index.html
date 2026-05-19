@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Shiba Animation Demo</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="hero-card">
+        <div class="hero-topbar">
+          <p class="eyebrow" id="hero-eyebrow">Three.js / Procedural Animation</p>
+          <div class="locale-switch">
+            <span class="locale-label" id="language-label">Language</span>
+            <div class="locale-buttons">
+              <button type="button" data-locale="en" class="is-active" aria-pressed="true">
+                EN
+              </button>
+              <button type="button" data-locale="zh" aria-pressed="false">
+                中文
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-copy">
+          <h1 id="hero-title">Shiba Animation Console</h1>
+          <p class="description" id="hero-description">
+            Load <code>shiba.glb</code> and drive idle, walk, run, and jump
+            with a procedural rig because the source model does not include
+            bones or animation clips.
+          </p>
+        </div>
+
+        <div class="controls" id="controls">
+          <button type="button" data-action="idle" class="is-active">Idle</button>
+          <button type="button" data-action="walk">Walk</button>
+          <button type="button" data-action="run">Run</button>
+          <button type="button" data-action="jump">Jump</button>
+        </div>
+
+        <div class="status-bar">
+          <span id="status-label">Current Motion</span>
+          <strong id="current-action">Idle</strong>
+        </div>
+      </div>
+
+      <div id="app"></div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
